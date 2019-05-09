@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<property name="logDir" value="./logs" />
+	<property name="CONSOLE_LOG_PATTERN" value="%date{yyyy-MM-dd HH:mm:ss SSS} %highlight(%-5level) %yellow(%thread) %green(%-40.40logger{39})| %msg%n"/>
+	<property name="FILE_LOG_PATTERN" value="%date{yyyy-MM-dd HH:mm:ss SSS} %highlight(%-5level) %yellow(%thread) %green(%-40.40logger{39})| %msg%n"/>
+	<appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>${CONSOLE_LOG_PATTERN}</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="RollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${logDir}/bn-%d{yyyyMMdd}-%i.log</fileNamePattern>
+			<maxHistory>90</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>412MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>${FILE_LOG_PATTERN}</pattern>
+		</encoder>
+	</appender>
+
+	<root level="INFO">
+		 <appender-ref ref="stdout" />
+		<appender-ref ref="RollingFile" />
+	</root>
+</configuration>

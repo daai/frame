@@ -1,0 +1,31 @@
+spring:
+  cache:
+    redis:
+      time-to-live: 60s
+    type: redis
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    timeout: 10000
+    lettuce:
+      pool:
+        max-idle: 10
+        max-active: 10
+        min-idle: 5
+        max-wait: 10000
+    database: 0
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+    publisher-confirms: true  #  消息发送到交换机确认机制,是否确认回调
+    publisher-returns: true
+ftp:
+    host: 127.0.0.1
+    port: 21
+    username: ftp
+    password: ftp
+    connectTimeOut: 10000
