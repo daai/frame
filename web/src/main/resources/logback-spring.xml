@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-	<property name="logDir" value="./logs" />
+	<property name="logDir" value="./web/logs" />
 	<property name="CONSOLE_LOG_PATTERN" value="%date{yyyy-MM-dd HH:mm:ss SSS} %highlight(%-5level) %yellow(%thread) %green(%-40.40logger{39})| %msg%n"/>
 	<property name="FILE_LOG_PATTERN" value="%date{yyyy-MM-dd HH:mm:ss SSS} %highlight(%-5level) %yellow(%thread) %green(%-40.40logger{39})| %msg%n"/>
 	<appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
