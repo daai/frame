@@ -60,7 +60,7 @@
         </javaClientGenerator>
 
         <!-- !!!! Table Configurations !!!! -->
-        <table tableName="t_user" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+        <table tableName="litemall_hx_user" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                enableUpdateByExample="false"/>
     </context>
 </generatorConfiguration>
